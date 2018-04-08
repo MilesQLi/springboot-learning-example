@@ -2,6 +2,7 @@ package spring.boot.core.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +42,13 @@ public class UserController {
     public String createUserForm(ModelMap map) {
         map.addAttribute("user", new User());
         map.addAttribute("action", "create");
+        System.out.println("creasztae spage");
         return "userForm";
+    }
+    
+    @RequestMapping("/cxz")
+    String home() {
+        return "Hello World!";
     }
 
     /**
